@@ -32,7 +32,9 @@
   }
 }
 
-.test-hook__draw {
-  height: 0;
-  overflow: hidden;
+.test-hook{
+  &__draw {
+    height: 0;
+    overflow: hidden;
+  }
 }
