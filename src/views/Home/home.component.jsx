@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 
 import DummyComponent from '../../components/atoms/dummy-component';
 import TestHook from '../../components/atoms/test-hook';
+import Tooltip from '../../components/atoms/tooltip';
 import dummy from '../../assets/illustrations/dummy.png';
 import { ReactComponent as Lamp } from '../../assets/illustrations/lamp.svg';
+
 
 class Home extends React.Component {
   constructor(props) {
@@ -36,6 +38,14 @@ class Home extends React.Component {
         <br />
         <br />
         <TestHook />
+        <br />
+        <br />
+        <br />
+        <br />
+        <Tooltip
+          id="default"
+          text="Lorem ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet"
+        />
       </div>
     );
   }
