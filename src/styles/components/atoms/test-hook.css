@@ -1,0 +1,8 @@
+.test-hook{
+  font-size: 15px;
+  
+  &__draw {
+    height: 0;
+    overflow: hidden;
+  }
+}

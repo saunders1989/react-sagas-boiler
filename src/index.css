@@ -12,3 +12,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+@import './styles/components/atoms/test-hook.css';
+@import './styles/components/atoms/tooltip.css';
