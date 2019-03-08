@@ -52,11 +52,7 @@ class Tooltip extends React.Component {
   toggleVisibility = () => {
     const { isVisible } = this.state;
 
-    if (isVisible) {
-      this.hideTooltip();
-    } else {
-      this.showTooltip();
-    }
+    isVisible ? this.hideTooltip() : this.showTooltip();
   }
 
   showTooltip = () => {
@@ -71,7 +67,7 @@ class Tooltip extends React.Component {
     });
   }
 
-  handleClick = (e) => {
+  handleClick = e => {
     if (e.currentTarget === this.close) {
       this.hideTooltip();
       this.target.focus();
@@ -81,7 +77,7 @@ class Tooltip extends React.Component {
     }
   };
 
-  handleKeyDown = (e) => {
+  handleKeyDown = e => {
     if (e.keyCode === 13 || e.keyCode === 32) { // enter or space
       /* istanbul ignore else */
       if (e.currentTarget === this.target || e.currentTarget === this.close) {
@@ -96,7 +92,7 @@ class Tooltip extends React.Component {
     }
   };
 
-  handleWindowClick = /* istanbul ignore next */ (e) => {
+  handleWindowClick = /* istanbul ignore next */ e => {
     if (e.target.closest('.tooltip') === this.element) return;
     this.hideTooltip();
   };
@@ -117,14 +113,14 @@ class Tooltip extends React.Component {
     return (
       <div
         className={classNames}
-        ref={(elem) => { this.element = elem; }}
+        ref={elem => { this.element = elem; }}
       >
         <button
           type="button"
           aria-controls={id}
           aria-label="info"
           className="tooltip__target"
-          ref={(elem) => { this.target = elem; }}
+          ref={elem => { this.target = elem; }}
           onClick={this.handleClick}
           onKeyDown={this.handleKeyDown}
         >
@@ -134,7 +130,7 @@ class Tooltip extends React.Component {
         <span
           className="tooltip__content"
           id={id}
-          ref={(elem) => { this.content = elem; }}
+          ref={elem => { this.content = elem; }}
           role="tooltip"
           hidden={!isVisible}
         >
@@ -142,7 +138,7 @@ class Tooltip extends React.Component {
             type="button"
             aria-label="close"
             className="tooltip__close"
-            ref={(elem) => { this.close = elem; }}
+            ref={elem => { this.close = elem; }}
             onClick={this.handleClick}
             onKeyDown={this.handleKeyDown}
           >

@@ -6,7 +6,7 @@ export default function getApiContent() {
       response => response.json(),
       error => error,
     )
-    .then((json) => {
+    .then(json => {
       dispatch(actions.storeContent(json));
     });
 }
