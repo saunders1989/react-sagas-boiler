@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tooltip should render correctly 1`] = `
+<div
+  className="tooltip"
+>
+  <button
+    aria-controls="tooltip"
+    aria-label="info"
+    className="tooltip__target"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    Open me
+    <i
+      className="icon-info"
+    />
+  </button>
+  <span
+    className="tooltip__content"
+    hidden={true}
+    id="tooltip"
+    role="tooltip"
+  >
+    <button
+      aria-label="close"
+      className="tooltip__close"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      type="button"
+    >
+      <i
+        className="icon-close"
+      />
+    </button>
+    Lorem ipsum dolor sit amet
+  </span>
+</div>
+`;

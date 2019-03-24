@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TestHook should render correctly 1`] = `
+<div
+  className="test-hook"
+>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Open
+  </button>
+  <p />
+  <div
+    className="test-hook__draw"
+  >
+    <p>
+      this is the draw
+    </p>
+    <p>
+      this is the draw
+    </p>
+    <p>
+      this is the draw
+    </p>
+  </div>
+</div>
+`;
