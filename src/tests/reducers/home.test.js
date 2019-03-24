@@ -54,4 +54,16 @@ describe('STORE_CONTENT', () => {
 
     expect(home(undefined, action)).toEqual(expectedState);
   });
+
+  describe('ERROR_FETCHING_CONTENT', () => {
+    test('returns the correct state', () => {
+      const action = { type: 'ERROR_FETCHING_CONTENT', payload: 'error' };
+      const expectedState = {
+        count: 0,
+        todos: 'error'
+      };
+
+      expect(home(undefined, action)).toEqual(expectedState);
+    });
+  });
 });
