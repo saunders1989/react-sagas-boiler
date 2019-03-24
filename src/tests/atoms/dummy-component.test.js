@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 
 import DummyComponent from '../../components/atoms/dummy-component';
 
@@ -18,4 +18,12 @@ describe('DummyComponent', () => {
     );
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should render with correct default props', () => {
+    wrapper = mount(
+      <DummyComponent />
+    );
+
+    expect(wrapper.props().onClick).not.toThrow();
+ });
 });

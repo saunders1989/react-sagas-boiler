@@ -56,16 +56,4 @@ describe('async actions', () => {
       expect(store.getActions()).toEqual(expectedActions);
     })
   });
-
-
-  // it('should dispatch SET_FAIL action on failed api call', async () => {
-  //   spyOn(getApiContent, 'fetchHelper').and.returnValue(Promise.reject());
-  //   const mockDispatch = jest.fn();
-
-  //   await getApiContent()(mockDispatch);
-
-  //   expect(mockDispatch).toHaveBeenCalledWith({
-  //     type: SET_FAIL,
-  //   });
-  // });
 })
