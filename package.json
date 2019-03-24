@@ -93,7 +93,10 @@
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
       "!src/**/*.d.ts",
-      "!src/views/**/*.{js,jsx,ts,tsx}"
+      "!src/views/**/*.{js,jsx,ts,tsx}",
+      "!src/reducers/index.js",
+      "!src/serviceWorker.js",
+      "!src/store/index.js"
     ],
     "resolver": "jest-pnp-resolver",
     "setupFiles": [
