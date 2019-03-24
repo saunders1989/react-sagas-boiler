@@ -99,7 +99,8 @@
       "!src/reducers/index.js",
       "!src/serviceWorker.js",
       "!src/store/index.js",
-      "!src/index.jsx"
+      "!src/index.jsx",
+      "!src/routes/index.js"
     ],
     "resolver": "jest-pnp-resolver",
     "setupFiles": [
