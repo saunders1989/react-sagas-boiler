@@ -19,6 +19,12 @@ const home = handleActions(
         todos: action.payload,
       };
     },
+    [types.ERROR_FETCHING_CONTENT](state, action) {
+      return {
+        ...state,
+        todos: action.payload,
+      };
+    },
   },
   {
     count: 0,

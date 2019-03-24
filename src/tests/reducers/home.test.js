@@ -4,6 +4,17 @@ import {
   STORE_CONTENT
 } from '../../actions/home';
 
+describe('Initial state', () => {
+  test('returns the correct state', () => {
+    const initialState = {
+      count: 0,
+      todos: []
+    };
+
+    expect(home(undefined, {})).toEqual(initialState);
+  });
+});
+
 describe('INCREMENT', () => {
   test('returns the correct state', () => {
     const action = { type: 'INCREMENT', payload: 1 };
