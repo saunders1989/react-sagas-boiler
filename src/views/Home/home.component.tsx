@@ -1,21 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import DummyComponent from '../../components/atoms/dummy-component.tsx';
-import TestHook from '../../components/atoms/test-hook.tsx';
+import DummyComponent from '../../components/atoms/dummy-component';
+import TestHook from '../../components/atoms/test-hook';
 import Tooltip from '../../components/atoms/tooltip';
 import dummy from '../../assets/illustrations/dummy.png';
 import { ReactComponent as Lamp } from '../../assets/illustrations/lamp.svg';
 
+interface IProps {
+  getContent: () => null,
+  count: 0,
+  onClick: () => null,
+}
 
-class Home extends React.Component {
-  constructor(props) {
+
+class Home extends React.Component<IProps> {
+  public static propTypes = {
+    getContent: PropTypes.func,
+    count: PropTypes.number,
+    onClick: PropTypes.func,
+  };
+
+  constructor(props: IProps) {
     super(props);
 
     props.getContent();
   }
 
-  render() {
+  public render() {
     const { count, onClick } = this.props;
 
     return (
@@ -50,17 +62,5 @@ class Home extends React.Component {
     );
   }
 }
-
-Home.defaultProps = {
-  getContent: () => null,
-  count: 0,
-  onClick: () => null,
-};
-
-Home.propTypes = {
-  getContent: PropTypes.func,
-  count: PropTypes.number,
-  onClick: PropTypes.func,
-};
 
 export default Home;

@@ -8,6 +8,12 @@
       "src/tests/**/*.js"
     ]
   },
+  "rules": {
+    "ordered-imports": false,
+    "object-literal-sort-keys": false,
+    "interface-name": false,
+    "curly": [true, "ignore-same-line"]
+  },
   "jsRules": {
     "ordered-imports": false,
     "object-literal-sort-keys": false,

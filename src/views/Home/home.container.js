@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import actions from '../../actions';
 import getApiContent from '../../thunks';
-import Home from './home.component';
+import Home from './home.component.tsx';
 
 function mapStateToProps(state) {
   const { home: { count } } = state;
