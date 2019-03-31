@@ -1,10 +1,12 @@
 import { createActions } from 'redux-actions';
 
 import home from './home';
+import test from './test';
 
 const types = Object.assign(
   {},
   home,
+  test,
 );
 
 const actions = createActions(
