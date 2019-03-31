@@ -1,7 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const DummyComponent = ({ onClick }) => (
+interface IProps {
+  onClick?: () => void;
+}
+
+const DummyComponent = ({ onClick }: IProps) => (
   <button
     onClick={onClick}
     type="button"
@@ -11,11 +14,7 @@ const DummyComponent = ({ onClick }) => (
 );
 
 DummyComponent.defaultProps = {
-  onClick: () => {},
-};
-
-DummyComponent.propTypes = {
-  onClick: PropTypes.func,
+  onClick: () => null
 };
 
 export default DummyComponent;

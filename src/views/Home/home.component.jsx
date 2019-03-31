@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import DummyComponent from '../../components/atoms/dummy-component';
-import TestHook from '../../components/atoms/test-hook';
+import DummyComponent from '../../components/atoms/dummy-component.tsx';
+import TestHook from '../../components/atoms/test-hook.tsx';
 import Tooltip from '../../components/atoms/tooltip';
 import dummy from '../../assets/illustrations/dummy.png';
 import { ReactComponent as Lamp } from '../../assets/illustrations/lamp.svg';
@@ -52,9 +52,9 @@ class Home extends React.Component {
 }
 
 Home.defaultProps = {
-  getContent: () => {},
+  getContent: () => null,
   count: 0,
-  onClick: () => {},
+  onClick: () => null,
 };
 
 Home.propTypes = {
