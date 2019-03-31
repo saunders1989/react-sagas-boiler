@@ -1,7 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const DummyComponent = ({ onClick }) => (
+interface Props {
+  onClick?: () => void;
+}
+
+// public static defaultProps: Partial<IProps> = {
+//   countBy: 1,
+// };
+
+const DummyComponent = ({ onClick }: Props) => (
   <button
     onClick={onClick}
     type="button"
@@ -9,10 +17,6 @@ const DummyComponent = ({ onClick }) => (
     Click to increment
   </button>
 );
-
-DummyComponent.defaultProps = {
-  onClick: () => {},
-};
 
 DummyComponent.propTypes = {
   onClick: PropTypes.func,

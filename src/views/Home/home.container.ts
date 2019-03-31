@@ -4,7 +4,7 @@ import actions from '../../actions';
 import getApiContent from '../../thunks';
 import Home from './home.component';
 
-function mapStateToProps(state) {
+function mapStateToProps(state: any) {
   const { home: { count } } = state;
 
   return {
@@ -12,7 +12,7 @@ function mapStateToProps(state) {
   };
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch: any) {
   return {
     getContent() {
       dispatch(getApiContent());

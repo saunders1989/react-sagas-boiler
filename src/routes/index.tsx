@@ -11,7 +11,7 @@ const routes = (
       <Link to="/about-us">About</Link>
     </header>
     <Switch>
-      <Route exact path="/" component={HomeContainer} />
+      <Route exact={true} path="/" component={HomeContainer} />
     </Switch>
   </div>
 );

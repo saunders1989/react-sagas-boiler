@@ -7,9 +7,8 @@ const types = Object.assign(
   home,
 );
 
-const actions = createActions(
-  ...Object.keys(types).map(type => types[type]),
-);
+const actions = createActions.apply(null, [Object.values(types)]);
 
 export default actions;
 export { types };
+
