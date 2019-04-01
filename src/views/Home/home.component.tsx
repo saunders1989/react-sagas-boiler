@@ -8,16 +8,12 @@ import dummy from '../../assets/illustrations/dummy.png';
 import { ReactComponent as Lamp } from '../../assets/illustrations/lamp.svg';
 
 interface IProps {
-  getContent: () => null,
-  count: 0,
-  onClick: () => null,
+  getContent?: () => void,
+  count?: number,
+  onClick?: () => void,
 }
 
-interface DispatchProps {
-  getContent: () => void
-}
-
-class Home extends React.Component<IProps & DispatchProps, any> {
+class Home extends React.Component<IProps> {
   public static propTypes = {
     getContent: PropTypes.func,
     count: PropTypes.number,

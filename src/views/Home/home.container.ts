@@ -1,37 +1,33 @@
 import { connect } from 'react-redux';
 
 import actions from '../../actions';
-// import getApiContent from '../../thunks';
+import getApiContent from '../../thunks';
 import Home from './home.component';
 import { Dispatch } from 'react';
-import { AnyAction } from 'redux';
 
-// interface MyProps {
-//   count: number;
-//   onClick: () => null;
-// }
-
-interface MyStateProps {
+interface HomeState {
   count: number;
 }
 
-interface MyDispatchProps {
+interface TestState {
+  test: boolean;
+}
+
+interface ApplicationState {
+  home: HomeState;
+  test: TestState
+}
+
+interface StateProps {
+  count: number;
+}
+
+interface DispatchProps {
   getContent: () => void;
   onClick: () => void;
 }
 
-// interface MyOwnProps {
-//   count: number;
-//   getContent: () => void;
-//   onClick: () => void;
-// }
-
-// interface Home = {
-//   getContent: () => void;
-//   onClick: () => void;
-// }
-
-function mapStateToProps(state: any) {
+function mapStateToProps(state: ApplicationState) {
   const { home: { count } } = state;
 
   return {
@@ -40,10 +36,10 @@ function mapStateToProps(state: any) {
 }
 
 // Dispatch<actions.HomeAcionts>
-function mapDispatchToProps(dispatch:  Dispatch<AnyAction>) {
+function mapDispatchToProps(dispatch: Dispatch<any>): DispatchProps {
   return {
     getContent() {
-      // dispatch(getApiContent());
+      dispatch(getApiContent());
     },
     onClick() {
       dispatch(actions.increment());
@@ -51,9 +47,9 @@ function mapDispatchToProps(dispatch:  Dispatch<AnyAction>) {
   };
 }
 
-const HomeContainer = connect<MyStateProps, MyDispatchProps, Home>(
+const HomeContainer = connect<StateProps, DispatchProps>(
   mapStateToProps,
   mapDispatchToProps,
-)(Home as any);
+)(Home);
 
 export default HomeContainer;
