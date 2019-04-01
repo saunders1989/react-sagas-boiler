@@ -13,8 +13,11 @@ interface IProps {
   onClick: () => null,
 }
 
+interface DispatchProps {
+  getContent: () => void
+}
 
-class Home extends React.Component<IProps> {
+class Home extends React.Component<IProps & DispatchProps, any> {
   public static propTypes = {
     getContent: PropTypes.func,
     count: PropTypes.number,
