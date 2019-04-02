@@ -1,5 +1,9 @@
 .test-hook{
   font-size: 15px;
+
+  height: 200px;
+  width: 200px;
+  background: url(/assets/illustrations/dummy.png);
   
   &__draw {
     height: 0;

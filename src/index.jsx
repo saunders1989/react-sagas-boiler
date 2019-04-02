@@ -3,11 +3,14 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import store from './store';
-
+import sagas from './sagas';
+import configureStore from './store';
 import routes from './routes';
 
 import './index.css';
+
+const store = configureStore();
+store.runSaga(sagas);
 
 const AppRouter = () => (
   <Provider store={store}>
