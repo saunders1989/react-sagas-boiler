@@ -26,7 +26,7 @@ interface DispatchProps {
   onClick: () => void;
 }
 
-function mapStateToProps(state: ApplicationState) {
+function mapStateToProps(state: ApplicationState): StateProps {
   const { home: { count } } = state;
 
   return {
@@ -35,7 +35,8 @@ function mapStateToProps(state: ApplicationState) {
 }
 
 // Dispatch<actions.HomeAcionts>
-function mapDispatchToProps(dispatch: Dispatch<any>): DispatchProps {
+function mapDispatchToProps(dispatch: Dispatch): DispatchProps {
+  console.log(dispatch);
   return {
     getContent() {
       dispatch(actions.getContent());
@@ -46,7 +47,7 @@ function mapDispatchToProps(dispatch: Dispatch<any>): DispatchProps {
   };
 }
 
-const HomeContainer = connect<StateProps, DispatchProps>(
+const HomeContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
 )(Home);

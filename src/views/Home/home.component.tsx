@@ -7,20 +7,36 @@ import Tooltip from '../../components/atoms/tooltip';
 import dummy from '../../assets/illustrations/dummy.png';
 import { ReactComponent as Lamp } from '../../assets/illustrations/lamp.svg';
 
-interface IProps {
-  getContent?: () => void,
-  count?: number,
-  onClick?: () => void,
+// interface IProps {
+//   getContent: () => void,
+//   count: number,
+//   onClick: () => void,
+// }
+
+// interface IActionProps {
+//   getContent: () => void,
+//   onClick: () => void
+// }
+
+interface StateProps {
+  count: number,
 }
 
-class Home extends React.Component<IProps> {
+interface DispatchProps {
+  getContent: () => void,
+  onClick: () => void
+}
+
+type Props = StateProps & DispatchProps;
+
+class Home extends React.Component<Props> {
   public static propTypes = {
     getContent: PropTypes.func,
     count: PropTypes.number,
     onClick: PropTypes.func,
   };
 
-  constructor(props: IProps) {
+  constructor(props: Props) {
     super(props);
 
     props.getContent();
