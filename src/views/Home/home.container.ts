@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 
 import actions from '../../actions';
-import getApiContent from '../../thunks';
 import Home from './home.component';
 import { Dispatch } from 'react';
 
@@ -39,7 +38,7 @@ function mapStateToProps(state: ApplicationState) {
 function mapDispatchToProps(dispatch: Dispatch<any>): DispatchProps {
   return {
     getContent() {
-      dispatch(getApiContent());
+      dispatch(actions.getContent());
     },
     onClick() {
       dispatch(actions.increment());
