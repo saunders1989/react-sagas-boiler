@@ -35,8 +35,7 @@ function mapStateToProps(state: ApplicationState): StateProps {
 }
 
 // Dispatch<actions.HomeAcionts>
-function mapDispatchToProps(dispatch: Dispatch): DispatchProps {
-  console.log(dispatch);
+function mapDispatchToProps(dispatch: Dispatch<any>): DispatchProps {
   return {
     getContent() {
       dispatch(actions.getContent());
